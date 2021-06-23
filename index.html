@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>1ME322, Uppgift 3 - Ett litet spel</title>
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+	<main>
+		<div id="userInfo">
+			<p>Total poäng: <span id="totPoints">0</span></p>
+			<p>Antal spel: <span id="countGames">0</span></p>
+		</div>
+		<p>Spelplanen består av 16 platser dit du ska dra brickor med siffror. Målet är att i så många rader och kolumner som möjligt få stigande serier, dvs för varje ruta ska siffran till höger eller under vara större. Totalt finns det 40 brickor med talen 1 till 40. Ur dessa får du fyra brickor i taget och ska dra dem till spelplanen.</p>
+		<p>Du får 1 poäng för varje rad eller kolumn som har en stigande serie. Du kan spela flera gånger och på så sätt samla ihop fler poäng.</p>
+		<p><button type="button" id="newGameBtn">Nytt spel</button></p>
+		<table id="board"> <!-- Spelplanen -->
+			<!-- I img-taggarna används två klasser för rad och kolumn.
+				 r1, r2, etc. anger rad och c1, c2, etc. anger kolumn. -->
+			<tr>
+				<td><img src="img/empty.png" alt="bricka" class="r1 c1 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r1 c2 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r1 c3 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r1 c4 empty"></td>
+				<td id="r1mark" class="mark"></td> <!-- Bock | kryss för rad -->
+			</tr>
+			<tr>
+				<td><img src="img/empty.png" alt="bricka" class="r2 c1 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r2 c2 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r2 c3 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r2 c4 empty"></td>
+				<td id="r2mark" class="mark"></td> <!-- Bock | kryss för rad -->
+			</tr>
+			<tr>
+				<td><img src="img/empty.png" alt="bricka" class="r3 c1 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r3 c2 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r3 c3 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r3 c4 empty"></td>
+				<td id="r3mark" class="mark"></td> <!-- Bock | kryss för rad -->
+			</tr>
+			<tr>
+				<td><img src="img/empty.png" alt="bricka" class="r4 c1 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r4 c2 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r4 c3 empty"></td>
+				<td><img src="img/empty.png" alt="bricka" class="r4 c4 empty"></td>
+				<td id="r4mark" class="mark"></td> <!-- Bock | kryss för rad -->
+			</tr>
+			<tr>  <!-- Bock | kryss för kolumner -->
+				<td id="c1mark" class="mark"></td>
+				<td id="c2mark" class="mark"></td>
+				<td id="c3mark" class="mark"></td>
+				<td id="c4mark" class="mark"></td>
+				<td></td>
+			</tr>
+		</table>
+		<div id="control">
+			<div id="newBricks"> <!-- Nya brickor som väljs slumpmässigt -->
+				<img src="img/empty.png" alt="ny bricka" class="empty">
+				<img src="img/empty.png" alt="ny bricka" class="empty">
+				<img src="img/empty.png" alt="ny bricka" class="empty">
+				<img src="img/empty.png" alt="ny bricka" class="empty">
+			</div>
+			<button type="button" id="newBricksBtn">Nya brickor</button>
+		</div>
+	</main>
+</body>
+</html>
